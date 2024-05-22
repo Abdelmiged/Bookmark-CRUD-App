@@ -1,0 +1,185 @@
+:root {
+    --dark-violet-abstraction-clr: #7B2BBE;
+    --light-violet-abstraction-clr: #9D4EDD;
+
+    --page-header-bg-clr: #BF8BFF;
+    --header-gradient-1: #DABCFF;
+    --header-gradient-2: var(--dark-violet-abstraction-clr);
+
+    --submit-btn-bg-clr: var(--dark-violet-abstraction-clr);
+    --reset-btn-bg-clr: var(--light-violet-abstraction-clr);
+    --inputs-btn-bg-hover-clr: #B987F7;
+
+    --input-border-clr: rgba(157, 78, 221, 0.3);
+
+    --text-clr: 33, 37, 41;
+    --text-header-clr: 53, 46, 40;
+}
+
+label,
+td,
+p,
+li {
+    color: rgb(var(--text-clr));
+}
+
+.page-header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-main-header {
+    font-family: "Pacifico", cursive;
+    font-weight: 500;
+    font-size: 3.125rem;
+    position: relative;
+    display: inline-block;
+    overflow-y: hidden;
+    margin-bottom: 6.25rem;
+    color: rgb(var(--text-header-clr));
+}
+
+.page-main-header::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: 62%;
+    width: 100%;
+    z-index: -1;
+    height: 70%;
+    background-color: var(--page-header-bg-clr);
+    transition: all 0.5s;
+}
+
+.page-main-header:hover::before {
+    top: 32%;
+}
+
+/* URL Error Window */
+.error-window-overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    display: none;
+}
+
+.error-window-modal {
+    width: 31.25rem;
+    background-color: white;
+
+    p {
+        color: rgb(var(--text-header-clr));
+    }
+}
+
+.circles-container .circle {
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.red-circle {
+    background-color: #f15f5d;
+}
+
+.yellow-circle {
+    background-color: #febe2e;
+}
+
+.green-circle {
+    background-color: #4db748;
+}
+
+.error-window-modal p {
+    font-family: "Bree Serif", serif;
+    font-size: 1.3125rem;
+}
+
+ol li {
+    font-family: "PT Sans Caption", sans-serif;
+    font-size: 1.125rem;
+}
+
+ol li i {
+    color: var(--light-violet-abstraction-clr);
+}
+
+/* End URL Error Window */
+
+/* Inputs Section & Bookmarks Section */
+
+.inputs-section-header {
+    font-family: "Righteous", sans-serif;
+    font-weight: 500;
+    font-size: 1.5625rem;
+    background-image: linear-gradient(to left, var(--header-gradient-1), var(--header-gradient-2));
+    background-clip: text;
+    color: transparent;
+}
+
+#inputs-section input {
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    background-position-x: calc(100% - 0.75rem);
+    background-position-y: calc(100% - 1rem);
+}
+
+#inputs-section input:focus {
+    border-color: var(--input-border-clr);
+    box-shadow: 0 0 0 0.25rem var(--input-border-clr);
+}
+
+#inputs-section button,
+#bookmarks-section button {
+    font-family: "PT Sans Caption", sans-serif;
+    color: white;
+    font-weight: 400;
+}
+
+#inputs-section button:hover,
+#bookmarks-section button:hover {
+    background-color: var(--inputs-btn-bg-hover-clr);
+}
+
+#inputs-section button:active,
+#inputs-section button:focus,
+#bookmarks-section button:active,
+#bookmarks-section button:focus {
+    outline: none;
+}
+
+.submit-button, 
+.visit-button {
+    background-color: var(--submit-btn-bg-clr);
+}
+
+.reset-button,
+.delete-button {
+    background-color: var(--reset-btn-bg-clr);
+}
+
+.bookmarks-legend td {
+    font-family: "PT Sans Caption", sans-serif;
+    font-weight: 700;
+}
+
+td {
+    padding: 0.8rem 0;
+}
+
+@media (max-width: 400px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 300px) {
+    html {
+        font-size: 12px;
+    }
+}
