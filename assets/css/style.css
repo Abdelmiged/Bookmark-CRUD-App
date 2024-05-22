@@ -16,6 +16,11 @@
     --text-header-clr: 53, 46, 40;
 }
 
+*::selection {
+    background-color: #7B2BBE;
+    color: white;
+}
+
 label,
 td,
 p,
