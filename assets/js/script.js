@@ -9,6 +9,7 @@ var resetButton = document.getElementsByClassName("reset-button")[0];
 resetButton.addEventListener("click", resetBookmark);
 
 var sections = document.getElementsByTagName("section");
+var errorWindowModal = document.querySelector(".error-window-modal");
 
 // Change Page Theme Button
 var currentTheme = "light";
@@ -193,6 +194,9 @@ function loadFromLocalStorage() {
 function changePageTheme() {
     changeTheme.classList.toggle("change-theme-dark");
     rollingBall.classList.toggle("rolling-ball-dark");
+
+    errorWindowModal.classList.toggle("light-theme-modal");
+    errorWindowModal.classList.toggle("dark-theme-modal");
 
     Array.from(sections).forEach((item) => {
         item.classList.toggle("light-theme-section");

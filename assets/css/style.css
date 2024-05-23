@@ -19,6 +19,12 @@
     --transition: all 0.5s;
 }
 
+
+/* Change Theme Button & Variables */
+.light-theme-modal {
+    --bs-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
 .light-theme-section {
     --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
@@ -29,13 +35,17 @@
     --bs-body-color: #212529;
 }
 
+.dark-theme-modal {
+    --bs-box-shadow-lg: 0 0rem 1rem #771584;
+}
+
 .dark-theme-section {
     --bs-box-shadow: 0 0rem 1.5rem #771584;
 }
 
 .dark-theme-input {
     --bs-body-bg: #55395966;
-    --bs-border-width: 0;
+    --bs-border-color: #55395966;
     --bs-body-color: #fff;
 }
 
@@ -79,6 +89,8 @@
     transform: translateX(-100%);
     background-color: white;
 }
+/* End Change Theme Button & Variables */
+
 
 *::selection {
     background-color: #7B2BBE;
@@ -152,10 +164,11 @@ li {
 
 .error-window-modal {
     width: 31.25rem;
-    background-color: white;
+    background-color: rgb(var(--body-bg-clr));
 
-    p {
-        color: rgb(var(--text-header-clr));
+    p,
+    button {
+        color: rgb(var(--text-header-clr)) !important;
     }
 }
 
