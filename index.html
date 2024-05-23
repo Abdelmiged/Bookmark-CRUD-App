@@ -10,8 +10,10 @@
         <link rel="stylesheet" href="./assets/css/style.css">
         <title>Bookmark</title>
     </head>
-    <body class="position-relative">
-        
+    <body class="position-relative light-theme-variables">
+        <button class="change-theme">
+            <div class="rolling-ball"></div>
+        </button>
         <!--========== URL Error Window ========== -->
         <div class="error-window-overlay position-fixed">
             <div class="error-window-modal position-absolute top-50 start-50 translate-middle p-4 shadow-lg rounded-2">
@@ -42,14 +44,14 @@
                     </div>
 
                     <!-- ========== Inputs Section ========== -->
-                    <section id="inputs-section" class="py-3 px-5 mb-5 shadow rounded-3 d-flex flex-column justify-content-between">
+                    <section id="inputs-section" class="py-3 px-5 mb-5 shadow rounded-3 d-flex flex-column justify-content-between light-theme-section">
                         <h2 class="text-center mb-5 inputs-section-header"><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i></h2>
                         <div class="site-name-input-container form-floating mb-4">
-                            <input type="text" class="form-control" id="name-floating-input" placeholder="Bookmark Name">
+                            <input type="text" class="form-control light-theme-input" id="name-floating-input" placeholder="Bookmark Name">
                             <label for="name-floating-input"><i class="fa-solid fa-book-bookmark"></i> Bookmark Name</label>
                         </div>
                         <div class="site-url-input-container form-floating mb-4">
-                            <input type="url" class="form-control" id="url-floating-input" placeholder="Website URL">
+                            <input type="url" class="form-control light-theme-input" id="url-floating-input" placeholder="Website URL">
                             <label for="url-floating-input"><i class="fa-solid fa-link"></i> Website URL</label>
                         </div>
                         <div class="inputs-section-buttons d-flex justify-content-center align-items-center mt-5 mb-3">
@@ -60,7 +62,7 @@
                     <!-- ========== End Inputs Section ========== -->
 
                     <!-- ========== Bookmarks Section ========== -->
-                    <section id="bookmarks-section" class="py-3 px-5 mb-3 shadow rounded-3">
+                    <section id="bookmarks-section" class="py-3 px-5 mb-3 shadow rounded-3 light-theme-section">
                         <table class="w-100 text-center bookmarks">
                             <thead>
                                 <tr class="bookmarks-legend">

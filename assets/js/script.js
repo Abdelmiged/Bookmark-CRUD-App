@@ -8,6 +8,13 @@ submitButton.addEventListener("click", submitBookmark);
 var resetButton = document.getElementsByClassName("reset-button")[0];
 resetButton.addEventListener("click", resetBookmark);
 
+var sections = document.getElementsByTagName("section");
+
+// Change Page Theme Button
+var currentTheme = "light";
+var changeTheme = document.querySelector(".change-theme");
+var rollingBall = document.querySelector(".change-theme .rolling-ball");
+changeTheme.addEventListener("click", changePageTheme);
 
 
 var bookmarkNameInput = document.getElementById("name-floating-input");
@@ -181,4 +188,33 @@ function saveToLocalStorage() {
 
 function loadFromLocalStorage() {
     return JSON.parse(localStorage.getItem("bookmarksList"))
+}
+
+function changePageTheme() {
+    changeTheme.classList.toggle("change-theme-dark");
+    rollingBall.classList.toggle("rolling-ball-dark");
+
+    Array.from(sections).forEach((item) => {
+        item.classList.toggle("light-theme-section");
+        item.classList.toggle("dark-theme-section");
+    })
+
+    bookmarkNameInput.classList.toggle("light-theme-input");
+    bookmarkNameInput.classList.toggle("dark-theme-input");
+
+    urlInput.classList.toggle("light-theme-input");
+    urlInput.classList.toggle("dark-theme-input");
+
+    if(currentTheme == "light") {
+        document.documentElement.style.setProperty("--text-clr", "255, 255, 255");
+        document.documentElement.style.setProperty("--text-header-clr", "255, 255, 255");
+        document.documentElement.style.setProperty("--body-bg-clr", "32, 32, 39");
+        currentTheme = "dark";
+    }
+    else {
+        document.documentElement.style.setProperty("--text-clr", "33, 37, 41");
+        document.documentElement.style.setProperty("--text-header-clr", "53, 46, 40");
+        document.documentElement.style.setProperty("--body-bg-clr", "255, 255, 255");
+        currentTheme = "light";
+    }
 }

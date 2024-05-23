@@ -14,6 +14,70 @@
 
     --text-clr: 33, 37, 41;
     --text-header-clr: 53, 46, 40;
+    --body-bg-clr: 255, 255, 255;
+
+    --transition: all 0.5s;
+}
+
+.light-theme-section {
+    --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.light-theme-input {
+    --bs-body-bg: #fff;
+    --bs-border-width: 1px;
+    --bs-body-color: #212529;
+}
+
+.dark-theme-section {
+    --bs-box-shadow: 0 0rem 1.5rem #771584;
+}
+
+.dark-theme-input {
+    --bs-body-bg: #55395966;
+    --bs-border-width: 0;
+    --bs-body-color: #fff;
+}
+
+.change-theme {
+    --change-theme-outline: 1px solid black;
+
+    width: 3.75rem;
+    height: 1.5625rem;
+    background-color: rgb(189 186 186);
+    border: 0;
+    outline: var(--change-theme-outline) !important;
+    outline-offset: 2px;
+    border-radius: 100vw;
+    position: relative;
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    transition: var(--transition);
+}
+
+.change-theme-dark {
+    --change-theme-outline: 1px solid white;
+
+    background-color: rgb(217 169 224);
+}
+
+.rolling-ball {
+    height: 1.5625rem;
+    width: 1.5625rem;
+    background-color: rgb(24 24 20);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: var(--transition);
+}
+
+.rolling-ball-dark {
+    left: 100%;
+    transform: translateX(-100%);
+    background-color: white;
 }
 
 *::selection {
@@ -21,11 +85,25 @@
     color: white;
 }
 
+body {
+    background-color: rgb(var(--body-bg-clr));
+    transition: var(--transition);
+}
+
+section {
+    transition: var(--transition);
+}
+
+input {
+    transition: var(--transition);
+}
+
 label,
 td,
 p,
 li {
     color: rgb(var(--text-clr));
+    transition: var(--transition);
 }
 
 .page-header-container {
@@ -43,6 +121,7 @@ li {
     overflow-y: hidden;
     margin-bottom: 6.25rem;
     color: rgb(var(--text-header-clr));
+    transition: var(--transition);
 }
 
 .page-main-header::before {
